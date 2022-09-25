@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 
 export function Todo() {
+  const [count, setcount]=useState(1)
   const [todos, settodos] = useState([]);
-  const [todo, settodo] = useState("");
+  const [todo, settodo] = useState({});
 
   const add = () => {
     settodos([...todos, todo]);
-    settodo("");
+    settodo({mass:""});
+    setcount(count+1)
   };
 
-  function handlEdit(event,ele) {
+  function handlEdit(event) {
     // console.log(event.target.previousElementSibling);
     if(event.target.innerText=="edit"){
         event.target.previousElementSibling.setAttribute('contenteditable','true')
@@ -26,8 +28,11 @@ export function Todo() {
       <div>
         <input
           type="text"
-          value={todo}
-          onChange={(e) => settodo(e.target.value)}
+          value={todo.mass}
+          onChange={(e) => settodo(
+            {mass:e.target.value,
+            id:count}
+            )}
         />
         <button onClick={add}>Add</button>
       </div>
@@ -35,13 +40,13 @@ export function Todo() {
         {todos.map((x) => {
           return (
             <div>
-              <span>{x}</span>
+              <span>{x.mass}</span>
 
               <button onClick={handlEdit}>edit</button>
 
               <button
                 onClick={() => {
-                  let item = todos.filter((value) => value !== x);
+                  let item = todos.filter((value) => value.id !== x.id);
                   settodos([...item]);
                 }}
               >
