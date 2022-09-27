@@ -1,4 +1,5 @@
 import React,{useState} from "react"
+import 'C:/Users/DELL/Desktop/react/todo/src/Component/ColorToggle/ColorToggle.css';
 
 export function Colortoggle(){
     const [isRed, setIsRed]=useState(true)
@@ -9,7 +10,7 @@ export function Colortoggle(){
 
     return (
         <>
-         <h1 style={{color:isRed? 'red':"blue"}}>0123456789</h1>
+         <h1 className={isRed? 'red':"blue"}>0123456789</h1>
         <button onClick={colorToggles}>Add</button>
         </>
       );
