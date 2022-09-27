@@ -4,6 +4,7 @@ export function Todo() {
   const [count, setcount]=useState(1)
   const [todos, settodos] = useState([]);
   const [todo, settodo] = useState({});
+  // const [color, setColor]=useState(['red','green'])
 
   const add = () => {
     settodos([...todos, todo]);
@@ -11,21 +12,13 @@ export function Todo() {
     setcount(count+1)
   };
 
-  function handlEdit(event) {
-    // console.log(event.target.previousElementSibling);
-    if(event.target.innerText=="edit"){
-        event.target.previousElementSibling.setAttribute('contenteditable','true')
-        event.target.innerText="save"
-    }
-   else if(event.target.innerText=="save"){
-        event.target.previousElementSibling.setAttribute('contenteditable','false')
-        event.target.innerText="edit"
-    }
-  }
 
   return (
     <div>
+
+
       <div>
+     
         <input
           type="text"
           value={todo.mass}
@@ -36,13 +29,17 @@ export function Todo() {
         />
         <button onClick={add}>Add</button>
       </div>
+
+
       <div>
+      {/* <p style={{color:color[0]}}>kjdakjsfgadjaskggggggg</p> */}
         {todos.map((x) => {
           return (
             <div>
+              
               <span>{x.mass}</span>
 
-              <button onClick={handlEdit}>edit</button>
+              <button>edit</button>
 
               <button
                 onClick={() => {

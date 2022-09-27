@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import './index.css';
-// import App from './App';
-import { Todo } from './Component/Todo/Todo';
+// import {App} from './App';
+import { ColorRondam } from './Component/ColorRondam/ColorRondam';
+import { Colorchange } from './Component/Colorchange/Colorchange';
+// import { Todo }from './Component/Todo/Todo';
+
 import reportWebVitals from './reportWebVitals';
 
 
@@ -10,7 +13,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Todo />
+    <Colorchange/>
+    {/* <Todo /> */}
+    <ColorRondam/>
   </React.StrictMode>
 );
 
