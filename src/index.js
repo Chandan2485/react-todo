@@ -7,15 +7,17 @@ import { Colorchange } from './Component/Colorchange/Colorchange';
 // import { Todo }from './Component/Todo/Todo';
 
 import reportWebVitals from './reportWebVitals';
+import { Colortoggle } from './Component/ColorToggle/Colortoggle';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Colorchange/>
+    {/* <Colorchange/> */}
     {/* <Todo /> */}
-    <ColorRondam/>
+    {/* <ColorRondam/> */}
+    <Colortoggle/>
   </React.StrictMode>
 );
 
